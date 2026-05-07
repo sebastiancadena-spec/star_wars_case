@@ -17,7 +17,7 @@ BG    = '#F4F6F9'
 DATA_DIR = 'data/raw'
 
 st.set_page_config(
-    page_title = 'Inteligencia Estrategica — Consejo Jedi | KAVAK',
+    page_title = 'Inteligencia Estrategica — Consejo Jedi',
     page_icon  = ':rocket:',
     layout     = 'wide',
 )
@@ -448,6 +448,6 @@ else:
 
 st.markdown('''
 <div class="footer-block">
-    Preparado por Sebastian Cadena &nbsp;|&nbsp; Proceso de Seleccion KAVAK — BI Analyst &nbsp;|&nbsp; Mayo 2026
+    Preparado por Sebastian Cadena &nbsp;|&nbsp; Proceso de Seleccion — BI Analyst &nbsp;|&nbsp; Mayo 2026
 </div>
 ''', unsafe_allow_html = True)
