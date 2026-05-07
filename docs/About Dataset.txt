@@ -1,0 +1,232 @@
+---
+About Dataset
+---
+Star Wars Datasets
+A Galaxy Awaits
+The galaxy is vast and full of knowledge. If you're seeking to explore the lives of heroes and villains, uncover the mysteries of unknown species, or dream of piloting starships, you've found the right place. Arm yourself with the finest weaponry, align with powerful organizations, and venture where few have gone before. This is the way.
+
+Choose Your Data Format
+Our knowledge comes in four formats. If you prefer simplicity, choose CSV. For deeper understanding, use SQLite or DuckDB. Parquet is swift and efficient for high-performance queries.
+
+Begin Your Journey
+These starter notebooks are ready for you. Take the first step
+
+CSV Star Wars Starter for CSV
+Parquet Star Wars Starter for Parquet
+SQLite Coming soon.
+DuckDB Patience is key.
+Discover the Data
+There's much to learn
+
+battles Detailed accounts of significant events.
+characters Stories of all who walk this path.
+cities Knowledge awaits in bustling hubs and remote outposts.
+droids Tireless workers, each with a purpose.
+events Understand moments that changed the galaxy.
+films Revisit the tales that started it all.
+music Listen carefully to the soundtracks of the Force.
+organizations Choose your allies wisely.
+planets Many worlds to explore.
+quotes Words of wisdom echo across the stars.
+shows The saga continues with new adventures.
+species The galaxy is rich with diversity.
+starships These vessels will take you to the stars.
+timeline Follow a map through time.
+vehicles Transport awaits on land or air.
+weapons Learn the tools of the trade well.
+Trusted Sources
+Star Wars Movies These tales are canonical.
+Star Wars TV Shows They reveal new stories.
+Ultimate Star Wars A comprehensive guide.
+Wookieepedia A vast repository of knowledge.
+This is the way.
+
+---
+About Tables
+---
+
+1. battles
+Detailed accounts of the major battles in the Star Wars saga. Discover the strategic maneuvers and key participants in each conflict.
+
+id: A unique identifier for each battle.
+name: The name of the battle.
+location: Where the battle took place.
+date: The date of the battle (BBY or ABY).
+result: The outcome of the battle.
+participants: The factions and key figures involved.
+
+2. characters
+This table is the heart of your Star Wars sets, featuring all the iconic heroes, villains, and every memorable face (and mask) from the galaxy far, far away. Here you’ll find details on characters like Luke Skywalker, Darth Vader, and even that guy who got his arm chopped off in the cantina.
+
+id: The unique identifier for each character, because even in the Star Wars universe, we need order.
+name: From Anakin to Zuckuss, it’s the name that makes the legend.
+species: Whether they’re human, Wookiee, or Ewok, find out who belongs to what species.
+gender: Male, female, droid, or otherwise, everyone’s included.
+height: Measured in meters, because Star Wars doesn't do inches.
+weight: In kilograms – blame the galaxy's standard metric system.
+hair_color: From luscious locks to shiny domes, it’s all here.
+eye_color: You can gaze into the yellow eyes of the Sith safely.
+skin_color: Including shades like “pale Sith” and “green Yoda.”
+year_born: BBY (Before the Battle of Yavin), because who needs BCE?
+homeworld: Where they come from, like Tatooine or Alderaan (before it went boom).
+year_died: Not all heroes live forever, but they all get a date (or a blank if they're lucky).
+description: Brief bios, because everyone deserves a little backstory.
+
+3. cities
+Explore the cities of the Star Wars universe, from the bustling streets of Coruscant to the sandy alleys of Mos Eisley.
+
+id: A unique identifier for each city.
+name: The name of the city.
+planet: The planet where the city is located.
+description: A brief description of the city.
+
+4. droids
+The mechanical marvels of the Star Wars universe, from astromechs to protocol droids. This table catalogs their specifications and roles.
+
+id: A unique identifier for each droid.
+name: The name of the droid.
+model: The model type of the droid.
+manufacturer: Who built the droid.
+height: The height of the droid.
+mass: The mass of the droid.
+sensor_color: The color of the droid’s sensors.
+plating_color: The color of the droid’s plating.
+primary_function: The main function of the droid.
+films: The films in which the droid appears.
+
+5. events
+Chronicle the major events that have shaped the Star Wars galaxy. From epic battles to pivotal political moments, this table covers it all.
+
+id: A unique identifier for each event.
+event_name: The name of the event.
+date: The date of the event (BBY or ABY).
+location: Where the event took place.
+description: A brief description of the event.
+
+6. films
+Every Star Wars film in one place. This table keeps track of the details from each movie in the saga.
+
+id: A unique identifier for each film.
+title: The title of the film.
+release_date: The release date of the film.
+director: The director of the film.
+producer: The producer of the film.
+opening_crawl: The opening crawl text of the film.
+
+7. music
+A catalog of the iconic music that defines the Star Wars universe. From John Williams' legendary scores to the latest compositions.
+
+id: A unique identifier for each music piece.
+title: The title of the music piece.
+composer: The composer of the music.
+release_date: The release date of the music.
+film: The film or show in which the music appears.
+
+8. organizations
+From the noble Jedi Order to the sinister Sith, this table catalogs the influential organizations that shape the Star Wars galaxy. Discover the factions that fight for peace, power, and everything in between.
+
+id: A unique identifier for each organization.
+name: The name of the organization, like the Galactic Empire or the Rebel Alliance.
+founded: The year the organization was founded (BBY or ABY).
+dissolved: The year the organization was dissolved (if applicable).
+leader: The notable leaders who have headed the organization.
+members: Key members who played significant roles in the organization.
+affiliation: Affiliations with other groups or factions, because even in a galaxy far, far away, alliances matter.
+description: A brief description of the organization's purpose, history, and activities.
+films: The Star Wars films in which the organization is featured.
+
+9. planets
+Mapping the galaxy, one planet at a time. Find the data on every notable celestial body, from bustling Coruscant to the sands of Jakku.
+
+id: Unique identifier for each planet, because galaxy mapping is serious business.
+name: The planet’s name, like Tatooine or Naboo.
+diameter: Size matters when you’re dodging Death Stars.
+rotation_period: How long a day lasts on these planets.
+orbital_period: Their year length, which can vary a lot – looking at you, Hoth.
+gravity: Feel the force of gravity (relative to Coruscant).
+population: From billions on Coruscant to… not much on Dagobah.
+climate: Weather reports from temperate to “why did we come here?”
+terrain: Deserts, forests, swamps – you name it.
+surface_water: Percentage of water, because some places need a good moisture farm.
+residents: Who calls this place home (or who did before the Empire showed up).
+films: The movies where these planets got their screen time.
+
+10. quotes
+Memorable quotes from the Star Wars saga. Relive the iconic lines that have defined the franchise and etched themselves into popular culture.
+
+id: A unique identifier for each quote.
+character_name: The name of the character who said the quote.
+quote: The famous line itself.
+source: The movie or show where the quote is from.
+
+12. species
+Discover the diverse lifeforms that populate the Star Wars universe. From Wookiees to Twi'leks, this table is a xenobiologist's dream.
+
+id: Unique identifier for each species, because even in Star Wars, we categorize.
+name: The species name, like “Human” or “Yoda’s species” (yes, still mysterious).
+classification: Mammal, reptile, or other – it’s like high school biology, but cooler.
+designation: Sentient or non-sentient, because not everyone can pilot a starship.
+average_height: How tall they stand, because size matters not (unless you’re Yoda).
+skin_colors: From blue Twi'leks to green Rodians, all the rainbow’s hues.
+hair_colors: For species that have hair, because not everyone’s blessed like Chewbacca.
+eye_colors: The windows to their alien souls.
+average_lifespan: How long they live, from short-lived Ewoks to centuries-old Yoda.
+language: What they speak, because not everyone understands Binary.
+homeworld: Their planet of origin – essential for any interstellar journey.
+
+13. starships
+The fastest ships in the galaxy, and some not so fast. This table covers every vehicle that’s made the Kessel Run or simply floated in space.
+
+id: Unique identifier for each starship, because we can’t all fly the Millennium Falcon.
+name: The starship’s name – iconic like the X-wing or notorious like the Death Star.
+model: The model type, because starfighters and cruisers aren’t the same.
+manufacturer: Who built it, because every ship has an origin story.
+cost_in_credits: How many credits you’ll need to park one in your hangar.
+length: Size does matter in a dogfight.
+max_atmosphering_speed: How fast it goes in atmosphere – watch out for speed traps.
+crew: Number of people needed to fly this thing.
+passengers: How many friends you can bring along (unless they’re in carbonite).
+cargo_capacity: For all your smuggling needs.
+consumables: How long the ship can sustain life – stock up before long trips.
+hyperdrive_rating: The hyperdrive speed – because sometimes, sublight just isn’t enough.
+MGLT: Megalights per hour – the Star Wars measure of speed.
+starship_class: The class of the ship, like “Starfighter” or “Capital Ship.”
+pilots: Famous (or infamous) pilots of these ships.
+films: The movies where these starships made their mark.
+
+14. timeline
+A chronological record of key events in the Star Wars universe. Trace the history of the galaxy from the formation of the Republic to the rise of the First Order.
+
+id: A unique identifier for each timeline entry.
+event: A description of the event.
+year: The year the event took place (BBY or ABY).
+
+15. vehicles
+From landspeeders to AT-ATs, this table lists all the ground and atmospheric vehicles seen in the Star Wars universe.
+
+id: Unique identifier for each vehicle.
+name: The vehicle’s name.
+model: The model type, because speeder bikes and walkers aren’t the same.
+manufacturer: Who built it.
+cost_in_credits: How many credits you’ll need to own one.
+length: Size does matter when navigating through trees or streets.
+max_atmosphering_speed: How fast it goes on planets – watch out for speed traps.
+crew: Number of people needed to operate it.
+passengers: How many friends you can bring along.
+cargo_capacity: For all your transporting needs.
+consumables: Supplies needed for long trips.
+vehicle_class: The class of the vehicle, like “Speeder” or “Walker.”
+films: The movies where these vehicles made their mark.
+
+16. weapons
+From elegant lightsabers to powerful blasters, this table catalogs the iconic weaponry of the Star Wars universe. Whether you’re looking for the stats on a Jedi’s lightsaber or the cost of a Wookiee’s bowcaster, you’ll find it all here.
+
+id: A unique identifier for each weapon.
+name: The name of the weapon, whether it’s a humble blaster or a mighty lightsaber.
+model: The model of the weapon, because even in a galaxy far, far away, models matter.
+manufacturer: Who built it – be it BlasTech Industries or a crafty Jedi.
+cost_in_credits: The price tag in galactic credits – for those thinking of adding to their collection.
+length: Size matters in melee combat.
+type: The type of weapon, such as blaster, melee, or explosive.
+description: A brief description of the weapon’s capabilities and history.
+

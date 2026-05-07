@@ -1,0 +1,5 @@
+name,starship_class,passengers,cost_in_credits,cumulative_pct,ship_pct
+Executor,Star Dreadnought,38000.0,1143350000.0,99.7,25.0
+Rebel transport,Medium transport,90.0,3000000.0,99.9,50.0
+Tantive IV,Corvette,30.0,3500000.0,100.0,75.0
+Millennium Falcon,Light freighter,6.0,100000.0,100.0,100.0

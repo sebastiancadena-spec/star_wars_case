@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Charts pesados con Plotly embebido (~3.6 MB c/u, regenerables)
+output/charts/
+
+# Streamlit
+.streamlit/secrets.toml

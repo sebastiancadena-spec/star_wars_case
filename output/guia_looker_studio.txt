@@ -1,0 +1,478 @@
+================================================================
+  GUIA PASO A PASO: ARMAR EL DASHBOARD EN LOOKER STUDIO
+  Caso Star Wars BI — Consejo Jedi | Sebastian Cadena
+  Objetivo: replicar el archivo dashboard_star_wars_bi.html
+================================================================
+
+COLORES QUE USARAS EN TODO EL DASHBOARD (guarda estos):
+  Azul oscuro (Navy)  : #1B2A4A   <- color principal
+  Dorado              : #C9A84C   <- color de enfasis
+  Gris claro          : #E8ECF1   <- fondos de tarjetas
+  Rojo alerta         : #C0392B   <- solo en seccion P4
+  Blanco              : #FFFFFF
+  Gris texto          : #8C9BAA
+
+----------------------------------------------------------------
+PASO 0 — ABRIR LOOKER STUDIO Y CREAR EL REPORTE
+----------------------------------------------------------------
+
+1. Ve a: https://lookerstudio.google.com
+2. Haz clic en el boton azul "+ Crear" (esquina superior izquierda)
+3. Selecciona "Informe"
+4. Aparece una pantalla para agregar fuente de datos.
+   De momento haz clic en "Omitir" o agrega cualquiera —
+   las fuentes las agregas despues por seccion.
+
+5. Se abre el editor del reporte con una hoja en blanco.
+6. Configura el tamano de la pagina:
+   Menu superior: Diseno → Tamano de pagina → Personalizado
+   Ancho: 1200 px
+   Alto: 3500 px   (lo ajustamos al final si sobra espacio)
+
+7. Fondo de la pagina:
+   Menu superior: Tema y diseno → Color de fondo → #F4F6F9
+
+----------------------------------------------------------------
+PASO 1 — HEADER (encabezado)
+----------------------------------------------------------------
+
+El header es un rectangulo azul oscuro arriba del todo.
+
+A) RECTANGULO DE FONDO NAVY:
+   - Clic en "Agregar" → "Rectangulo"
+   - Dibujalo en la parte superior, ancho completo de la pagina
+   - Alto aproximado: 130 px
+   - Color de relleno: #1B2A4A
+   - Sin borde (borde = ninguno)
+
+B) LINEA DORADA INFERIOR DEL HEADER:
+   - Clic en "Agregar" → "Linea"
+   - Dibuja una linea horizontal en el borde inferior del rectangulo navy
+   - Color de la linea: #C9A84C
+   - Grosor: 3 px
+
+C) TEXTO ETIQUETA SUPERIOR (letra pequeña):
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Coloca dentro del rectangulo navy, parte superior
+   - Escribe:
+       CONSEJO JEDI — REPORTE CONFIDENCIAL  |  MAYO 2026  |  SEBASTIAN CADENA
+   - Fuente: Arial, 9 pt, NEGRITA, color #C9A84C (dorado)
+
+D) TITULO PRINCIPAL:
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Coloca debajo de la etiqueta, dentro del rectangulo
+   - Escribe:
+       Inteligencia Estrategica de la Galaxia:
+       Logistica y Operaciones
+   - Fuente: Arial, 24 pt, NEGRITA, color #FFFFFF (blanco)
+
+E) SUBTITULO:
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Debajo del titulo, todavia dentro del rectangulo navy
+   - Escribe:
+       Mision: transformar datos imperiales interceptados en decisiones estrategicas.
+       Fuente: Star Wars API (SWAPI)  |  Herramientas: Python en VS Code → Google Sheets → Looker Studio
+   - Fuente: Arial, 10 pt, color #8C9BAA (gris)
+
+----------------------------------------------------------------
+PASO 2 — SECCION P1: EFICIENCIA DE FLOTA
+----------------------------------------------------------------
+
+FUENTE DE DATOS: "Q1 - Fleet Efficiency"
+  Para conectarla: Menu → Recurso → Administrar fuentes de datos → Agregar fuente
+  Busca "Q1 - Fleet Efficiency" en tus Google Sheets
+
+- - - - - - - - - - - -
+2A) RECTANGULO DE SECCION:
+   - Clic en "Agregar" → "Rectangulo"
+   - Dibujalo debajo del header, con margen de 28 px arriba y a los lados
+   - Color de relleno: #FFFFFF (blanco)
+   - Borde izquierdo de 4 px color #C9A84C (dorado)
+     -> Para el borde izquierdo: en las opciones de borde, pon todos en 0
+        excepto el izquierdo que va en 4 px, color #C9A84C
+   - Sombra ligera si Looker lo permite
+
+2B) ETIQUETA DE SECCION (letra pequeña dorada):
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Escribe:   P1 | EFICIENCIA DE FLOTA
+   - Fuente: Arial, 9 pt, NEGRITA, color #C9A84C, espaciado entre letras amplio
+
+2C) TITULAR (mensaje clave — va primero, esto es lo mas importante):
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Escribe:
+       El Halcon Milenario es la nave mas eficiente:
+       costo por pasajero 7 veces menor que cualquier otra.
+   - Fuente: Arial, 18 pt, NEGRITA, color #1B2A4A
+
+2D) FRASE DE APOYO (debajo del titular):
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Escribe:
+       Nota: solo 4 naves tienen datos completos de costo y capacidad en el dataset.
+       La muestra es pequena pero suficiente para orientar la decision.
+   - Fuente: Arial, 11 pt, color #8C9BAA (gris)
+
+2E) LINEA DORADA SEPARADORA:
+   - Clic en "Agregar" → "Linea"
+   - Linea horizontal, ancho completo de la seccion
+   - Color: #C9A84C, grosor: 1.5 px
+
+2F) 4 TARJETAS KPI (van en fila horizontal):
+
+   Tarjeta 1:
+   - Clic en "Agregar" → "Tarjeta de puntuacion"
+   - Fuente de datos: Q1 - Fleet Efficiency
+   - Metrica: COUNT(name) — o escribe el numero a mano
+   - Numero a mostrar: 4
+   - Si no puedes con metrica automatica, usa "Cuadro de texto":
+       Numero grande: 4
+       Texto debajo: Naves con datos completos de costo y capacidad de pasajeros
+   - Fondo: #E8ECF1
+   - Color del numero: #1B2A4A
+
+   Tarjeta 2:
+   - Mismo procedimiento
+   - Numero: 16,667 cr.
+   - Texto: Costo por pasajero del Halcon Milenario (el mas bajo)
+   - Fondo: #C9A84C (dorado)
+   - Color del numero: #FFFFFF (blanco)
+   - Color del texto: #FFFFFF
+
+   Tarjeta 3:
+   - Numero: 38,000
+   - Texto: Pasajeros del Executor — la nave con mayor capacidad absoluta
+   - Fondo: #E8ECF1
+   - Color del numero: #1B2A4A
+
+   Tarjeta 4:
+   - Numero: 30,088 cr.
+   - Texto: Costo por pasajero del Executor (2a opcion en eficiencia)
+   - Fondo: #E8ECF1
+   - Color del numero: #1B2A4A
+
+   COMO HACER UNA TARJETA KPI CON NUMERO ESTATICO EN LOOKER:
+   La forma mas simple es con 2 cuadros de texto apilados:
+   - Cuadro 1: el numero (fuente grande, 28 pt, negrita)
+   - Cuadro 2: la descripcion (fuente 9 pt, gris)
+   - Un rectangulo de fondo con el color correspondiente
+   Agrupalos (selecciona los 3 → clic derecho → Agrupar)
+
+2G) GRAFICA DE BARRAS — COSTO POR PASAJERO:
+   - Clic en "Agregar" → "Grafico" → "Grafico de barras"
+   - Fuente de datos: Q1 - Fleet Efficiency
+   - DIMENSION (eje): name
+   - METRICA (valor): cost_per_passenger
+   - Orientacion: HORIZONTAL (barras horizontales)
+     En Estilo → cambiar a horizontal si no lo es por defecto
+   - Ordenar: de menor a mayor (la nave mas eficiente queda arriba)
+   - Color de las barras:
+       Halcon Milenario: #C9A84C (dorado — es el ganador)
+       Las demas: #1B2A4A (navy)
+     Para cambiar colores individuales:
+       Estilo → Color de datos → "Por dimension" → asigna color a cada barra
+   - Sin cuadricula en el eje X
+   - Etiquetas de datos: activar (muestra el numero en cada barra)
+   - Titulo del eje X: "Creditos por pasajero (menor es mejor)"
+   - Sin titulo del eje Y (los nombres de las naves ya lo dicen)
+   - Alto de la grafica: aprox. 300 px
+
+2H) CAJA DE RECOMENDACION:
+   - Clic en "Agregar" → "Rectangulo"
+   - Fondo: #E8ECF1
+   - Dentro, clic en "Agregar" → "Cuadro de texto"
+   - Escribe:
+       Recomendacion: Para misiones con presupuesto limitado, el Halcon Milenario
+       es la mejor opcion: el costo mas bajo por pasajero de toda la flota.
+       Para evacuacion masiva, el Executor es insustituible (38,000 plazas),
+       pero su precio equivale al 99.97% del presupuesto total de la flota.
+       No se puede depender de una sola nave de ese costo.
+   - Fuente: Arial, 10 pt, color #1B2A4A
+   - La palabra "Recomendacion:" en NEGRITA
+
+----------------------------------------------------------------
+PASO 3 — SECCION P2: ANALISIS DE TALENTO
+----------------------------------------------------------------
+
+FUENTE DE DATOS: "Q2 - Pilot Rate by Planet"
+
+3A) Repite el rectangulo de seccion (igual que en P1):
+   - Fondo blanco, borde izquierdo dorado 4 px
+
+3B) ETIQUETA: P2 | ANALISIS DE TALENTO  (misma fuente que P1)
+
+3C) TITULAR:
+   Tatooine, Ryloth y Naboo producen el doble de pilotos
+   que el promedio galactico.
+
+3D) FRASE DE APOYO:
+   Como se identificaron los pilotos: se cruzaron los nombres de personajes
+   con la lista de pilotos registrados en cada nave de la flota.
+   Fest y Lothal muestran 100% pero solo tienen 2 personajes cada uno —
+   muestra muy pequeña, dato orientativo.
+
+3E) LINEA DORADA SEPARADORA (igual que en P1)
+
+3F) 4 TARJETAS KPI:
+
+   Tarjeta 1:
+   - Numero: 96
+   - Texto: Total de personajes analizados en el universo Star Wars
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+   Tarjeta 2:
+   - Numero: 18
+   - Texto: Pilotos certificados identificados en la flota
+   - Fondo: #C9A84C (dorado), numero: #FFFFFF
+
+   Tarjeta 3:
+   - Numero: 18.8%
+   - Texto: Tasa de pilotos a nivel galactico: 1 de cada 5 personajes
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+   Tarjeta 4:
+   - Numero: 50%
+   - Texto: Tasa de pilotos en Tatooine, Ryloth y Naboo — el doble del promedio
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+3G) GRAFICA DE BARRAS — TASA DE PILOTOS POR PLANETA:
+   - Clic en "Agregar" → "Grafico" → "Grafico de barras"
+   - Fuente de datos: Q2 - Pilot Rate by Planet
+   - DIMENSION: homeworld
+   - METRICA: pilot_rate
+   - Orientacion: VERTICAL (barras hacia arriba)
+   - Ordenar: de mayor a menor (Fest y Lothal al inicio)
+   - Colores de barras:
+       Planetas con tasa >= 50%: #C9A84C (dorado)
+       Planetas con tasa < 50%: #1B2A4A (navy)
+     Planetas con >= 50%: Fest, Lothal, Tatooine, Ryloth, Naboo, Alderaan, Kamino
+     Planeta con < 50%: Corellia
+   - Agregar linea de referencia:
+     Estilo → Linea de referencia → Valor: 18.8
+     Color: #C0392B (rojo), tipo: punteada
+     Etiqueta: "Promedio galactico: 18.8%"
+   - Titulo del eje Y: "% de personajes que son pilotos"
+   - Etiquetas de datos: activar
+   - Alto: 350 px
+
+3H) CAJA DE RECOMENDACION:
+   Recomendacion: Concentrar el reclutamiento en Tatooine, Ryloth y Naboo:
+   tasa de pilotos del 50% vs 18.8% del promedio galactico.
+   No se encontro brecha significativa por genero (masculino 20.6% vs
+   femenino 16.7%), por lo que el reclutamiento debe ser inclusivo
+   y enfocado en el planeta de origen.
+
+----------------------------------------------------------------
+PASO 4 — SECCION P3: INVERSION ESTRATEGICA
+----------------------------------------------------------------
+
+FUENTE DE DATOS: "Q3 - Strategic Investment by Ship Class"
+
+4A) Rectangulo de seccion (igual que los anteriores)
+
+4B) ETIQUETA: P3 | INVERSION ESTRATEGICA
+
+4C) TITULAR:
+   El Destructor Estelar maximiza la presencia galactica.
+   El Carguero Ligero maximiza la eficiencia del presupuesto.
+
+4D) FRASE DE APOYO:
+   Como se calculo el puntaje: cada metrica (pasajeros, costo, velocidad)
+   se normalizo de 0 a 1 y se combino con pesos.
+   Velocidad subluminica = que tan rapido puede moverse la nave dentro de
+   un sistema planetario. Nota: solo 4 clases tienen datos completos.
+
+4E) LINEA DORADA SEPARADORA
+
+4F) 4 TARJETAS KPI:
+
+   Tarjeta 1:
+   - Numero: 0.57
+   - Texto: Puntaje estrategico del Destructor Estelar (el mas alto)
+   - Fondo: #C9A84C, numero: #FFFFFF
+
+   Tarjeta 2:
+   - Numero: 0.50
+   - Texto: Puntaje del Carguero Ligero — el mas eficiente en costo
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+   Tarjeta 3:
+   - Numero: 50%+30%+20%
+   - Texto: Formula: capacidad de pasajeros + menor costo + velocidad
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+   Tarjeta 4:
+   - Numero: 4
+   - Texto: Clases de naves evaluadas con datos completos
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+4G) GRAFICA DE BARRAS — PUNTAJE ESTRATEGICO POR CLASE:
+   - Clic en "Agregar" → "Grafico" → "Grafico de barras"
+   - Fuente de datos: Q3 - Strategic Investment by Ship Class
+   - DIMENSION: starship_class
+   - METRICA: strategic_score
+   - Orientacion: HORIZONTAL (barras hacia la derecha)
+   - Ordenar: de mayor a menor
+   - Colores:
+       Destructor Estelar: #C9A84C (dorado — el #1)
+       Carguero Ligero: #1B2A4A (navy — el #2)
+       Los demas: #E8ECF1 (gris claro)
+   - Etiquetas de datos: activar
+     Formato personalizado: agrega el detalle de pasajeros y costo
+     (esto lo puedes hacer en un cuadro de texto aparte si Looker no lo permite)
+   - Titulo eje X: "Puntaje estrategico (0 = peor, 1 = mejor)"
+   - Alto: 280 px
+
+4H) CAJA DE RECOMENDACION:
+   Recomendacion: No concentrar el 100% del presupuesto en una sola clase.
+   Portafolio recomendado: 1 Destructor Estelar para operaciones de gran escala
+   + flota de Cargueros Ligeros para presencia distribuida y misiones encubiertas.
+
+----------------------------------------------------------------
+PASO 5 — SECCION P4: HALLAZGO CRITICO (color rojo)
+----------------------------------------------------------------
+
+FUENTE DE DATOS: "Q4 - Evacuation Risk Summary"
+
+5A) Rectangulo de seccion:
+   - Igual que los anteriores PERO el borde izquierdo es ROJO: #C0392B
+
+5B) ETIQUETA: P4 | HALLAZGO CRITICO
+   - Color de la etiqueta: #C0392B (rojo, no dorado)
+
+5C) TITULAR:
+   La flota completa solo puede transportar el 0.003% de la poblacion galactica.
+   Una sola nave concentra el 99.7% de esa capacidad.
+   - Color: #1B2A4A (navy, igual que siempre)
+
+5D) FRASE DE APOYO:
+   Como se encontro este hallazgo: se sumo la capacidad de pasajeros de todas
+   las naves y se comparo con la poblacion total de los planetas en el dataset.
+   Se aplico el Principio de Pareto para mostrar la concentracion:
+   pocas naves controlan casi todo el recurso.
+
+5E) LINEA SEPARADORA: color #C0392B (rojo esta vez)
+
+5F) 4 TARJETAS KPI:
+
+   Tarjeta 1:
+   - Numero: 1.14 Billones
+   - Texto: Habitantes en los planetas conocidos de la galaxia
+   - Fondo: #C0392B (rojo), numero: #FFFFFF
+
+   Tarjeta 2:
+   - Numero: 38,126
+   - Texto: Pasajeros que caben en toda la flota junta (todas las naves)
+   - Fondo: #E8ECF1, numero: #1B2A4A
+
+   Tarjeta 3:
+   - Numero: 29.9 M
+   - Texto: Viajes que se necesitarian para evacuar toda la galaxia
+   - Fondo: #1B2A4A (navy), numero: #C9A84C (dorado)
+
+   Tarjeta 4:
+   - Numero: 99.7%
+   - Texto: De la capacidad total esta en 1 sola nave: el Executor
+   - Fondo: #C0392B (rojo), numero: #FFFFFF
+
+5G) GRAFICA DE BARRAS — EXECUTOR VS RESTO DE LA FLOTA:
+   - Clic en "Agregar" → "Grafico" → "Grafico de barras"
+   - OPCION A — con fuente de datos automatica:
+     Fuente: Q4 - Evacuation Risk Summary (si tiene columna de capacidad por nave)
+   - OPCION B — grafica con datos manuales (mas facil):
+     Clic en "Agregar" → "Grafico" → "Grafico de barras"
+     Fuente de datos: Crear fuente manual con 2 filas:
+       Fila 1: "Executor (1 nave)"         | 38000
+       Fila 2: "Las otras 59 naves"        | 126
+     Dimension: nombre
+     Metrica: capacidad
+   - Colores:
+       Executor: #C0392B (rojo — es la alerta)
+       Las otras: #E8ECF1 (gris claro)
+   - Etiquetas de datos: activar
+     Executor: "38,000 pasajeros (99.7% de la flota)"
+     Las otras: "126 pasajeros (0.3% de la flota)"
+   - Sin cuadricula en eje X
+   - Alto: 350 px
+
+5H) CUADRO DE TEXTO DE ALERTA (opcional, muy impactante):
+   - Clic en "Agregar" → "Cuadro de texto"
+   - Escribe:
+       Perder al Executor = perder el 99.7% de la capacidad de evacuacion.
+       Es el punto critico de falla de toda la Alianza.
+   - Fuente: Arial, 13 pt, NEGRITA, color #C0392B (rojo)
+   - Rectangulo de fondo blanco con borde rojo de 2 px
+
+5I) CAJA DE RECOMENDACION:
+   Recomendacion: El Consejo Jedi debe proteger al Executor como activo numero 1
+   de la flota: su perdida equivale a perder casi toda la capacidad de evacuacion.
+   Se requiere un plan urgente de diversificacion de flota para eliminar
+   este punto critico de falla.
+
+----------------------------------------------------------------
+PASO 6 — FOOTER (pie de pagina)
+----------------------------------------------------------------
+
+6A) RECTANGULO NAVY:
+   - Mismo fondo navy #1B2A4A
+   - Borde superior dorado #C9A84C de 2 px
+   - Al final de toda la pagina
+
+6B) TEXTO CENTRADO:
+   - Cuadro de texto dentro del rectangulo
+   - Escribe:
+       Preparado por Sebastian Cadena  |  Proceso de Seleccion KAVAK — BI Analyst  |  Mayo 2026
+   - Fuente: Arial, 10 pt, color #8C9BAA, centrado
+
+----------------------------------------------------------------
+PASO 7 — AJUSTES FINALES
+----------------------------------------------------------------
+
+7A) TITULO DEL REPORTE:
+   Arriba de todo, donde dice "Informe sin titulo"
+   Haz clic y cambia a:
+   "Inteligencia Estrategica de la Galaxia — Consejo Jedi | KAVAK"
+
+7B) COMPARTIR PUBLICAMENTE:
+   - Boton "Compartir" (esquina superior derecha)
+   - Haz clic en "Administrar acceso"
+   - Cambia "Restringido" a "Cualquier persona con el enlace"
+   - Rol: "Lector"
+   - Haz clic en "Copiar enlace"
+   - ESE enlace es el que entregas como "Dashboard publico"
+
+7C) REVISAR QUE TODO SE VEA BIEN:
+   - Clic en "Ver" (esquina superior derecha) para ver como lo vera el evaluador
+   - Revisa que los textos no esten cortados
+   - Revisa que los colores sean los correctos
+   - Revisa que los numeros en las tarjetas sean los que estan en esta guia
+
+----------------------------------------------------------------
+RESUMEN DE FUENTES DE DATOS QUE NECESITAS CONECTAR
+----------------------------------------------------------------
+
+En Menu → Recurso → Administrar fuentes de datos → Agregar fuente
+Busca cada una en tus Google Sheets (estan en la carpeta "Star Wars BI Case — KAVAK"):
+
+  1. Q1 - Fleet Efficiency           → para la grafica de costo por pasajero
+  2. Q2 - Pilot Rate by Planet       → para la grafica de tasa por planeta
+  3. Q3 - Strategic Investment       → para la grafica de puntaje estrategico
+  4. Q4 - Evacuation Risk Summary    → para los KPIs de la seccion critica
+
+----------------------------------------------------------------
+CONSEJO FINAL
+----------------------------------------------------------------
+
+Si algo no te sale exactamente igual en Looker, no te preocupes:
+lo importante es que el MENSAJE CLAVE este claro en cada seccion.
+
+El orden de prioridad es:
+  1. El titular grande en negrita (la conclusion)
+  2. Los 4 numeros KPI
+  3. La grafica
+  4. La recomendacion al pie
+
+El formato y los colores son secundarios — lo que evaluan es si
+la historia se entiende sin que alguien te la explique.
+
+================================================================
+FIN DE LA GUIA
+================================================================

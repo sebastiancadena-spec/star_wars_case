@@ -1,0 +1,5 @@
+starship_class,count,avg_cost,avg_passengers,avg_crew,total_capacity,avg_hyperdrive,avg_MGLT,score_capacity,score_cost,score_speed,strategic_score
+Star Dreadnought,1,1143350000.0,38000.0,279144.0,38000.0,4.0,40.0,1.0,0.0,0.36363636363636365,0.573
+Light freighter,1,100000.0,6.0,4.0,6.0,0.5,75.0,0.0,1.0,1.0,0.5
+Corvette,1,3500000.0,30.0,165.0,30.0,2.0,60.0,0.0006316786861083329,0.9970260223048327,0.7272727272727273,0.445
+Medium transport,1,3000000.0,90.0,6.0,90.0,4.0,20.0,0.0022108754013791653,0.9974633719658867,0.0,0.3

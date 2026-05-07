@@ -1,0 +1,5 @@
+name,starship_class,cost_in_credits,passengers,crew,efficiency_score,cost_per_passenger,length,hyperdrive_rating
+Millennium Falcon,Light freighter,100000.0,6.0,4.0,6e-05,16666.666666666668,34.75,0.5
+Executor,Star Dreadnought,1143350000.0,38000.0,279144.0,3.323566711855512e-05,30088.157894736843,19000.0,4.0
+Rebel transport,Medium transport,3000000.0,90.0,6.0,3e-05,33333.333333333336,90.0,4.0
+Tantive IV,Corvette,3500000.0,30.0,165.0,8.571428571428571e-06,116666.66666666667,150.0,2.0
